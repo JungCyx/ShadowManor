@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://dk42llnhyu8l"]
+
+[ext_resource type="Script" path="res://game/main_menu.gd" id="1_as8yo"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_as8yo")
+
+[node name="MainMenuUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartButton" type="Button" parent="MainMenuUI"]
+layout_mode = 0
+offset_left = 269.0
+offset_top = 181.0
+offset_right = 277.0
+offset_bottom = 189.0
+text = "Start"
+
+[connection signal="button_down" from="MainMenuUI/StartButton" to="." method="_on_button_button_down"]
