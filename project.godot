@@ -11,6 +11,14 @@ config_version=5
 [application]
 
 config/name="ShadowManor"
-run/main_scene="res://game/MainMenu.tscn"
+run/main_scene="res://game/scenes/MainMenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+BackroundMusic="*res://game/scenes/backround_music.tscn"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

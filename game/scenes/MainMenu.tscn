@@ -1,0 +1,39 @@
+[gd_scene load_steps=3 format=3 uid="uid://dk42llnhyu8l"]
+
+[ext_resource type="Script" path="res://game/scripts/main_menu.gd" id="1_v48kw"]
+[ext_resource type="Texture2D" uid="uid://c3e2snjtoobkx" path="res://assets/ShadowManor Background.png" id="2_cw5ok"]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_v48kw")
+
+[node name="MainMenuUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="MainMenuUI"]
+layout_mode = 0
+offset_left = -7.0
+offset_top = -358.0
+offset_right = 1181.0
+offset_bottom = 666.0
+texture = ExtResource("2_cw5ok")
+
+[node name="StartButton" type="Button" parent="MainMenuUI"]
+layout_mode = 0
+offset_left = 306.0
+offset_top = 256.0
+offset_right = 502.0
+offset_bottom = 337.0
+text = "Start"
+
+[node name="QuitButton" type="Button" parent="MainMenuUI"]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 253.0
+offset_right = 859.0
+offset_bottom = 337.0
+text = "Quit"
+
+[connection signal="button_down" from="MainMenuUI/StartButton" to="." method="_on_button_button_down"]

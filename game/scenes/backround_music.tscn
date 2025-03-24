@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cl70cgbwfbyl7"]
+
+[ext_resource type="AudioStream" uid="uid://dfyyq6kw172wo" path="res://assets/Audio Assets/vgm-atmospheric-deadspace.mp3" id="1_dhat4"]
+
+[node name="Backround Music" type="AudioStreamPlayer2D"]
+stream = ExtResource("1_dhat4")
+autoplay = true
