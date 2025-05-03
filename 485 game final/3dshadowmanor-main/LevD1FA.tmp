@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://dt5125abfv0xp"]
+
+[ext_resource type="PackedScene" uid="uid://d2cwclc81h8ue" path="res://player.tscn" id="1_l1t6g"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_h2m0w"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_m1ryw"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[sub_resource type="Environment" id="Environment_8ka31"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.0540789, 0.998537, 0, -0.998537, 0.0540789, 0.343779, 0.31701, -0.22125)
+light_color = Color(1, 1, 0.901961, 1)
+shadow_enabled = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_h2m0w")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_m1ryw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_8ka31")
+
+[node name="PlayerRigidBody3D" parent="." instance=ExtResource("1_l1t6g")]
+transform = Transform3D(1, 0, 0, 0, 0.0540789, 0.998537, 0, -0.998537, 0.0540789, 0.343779, 0.31701, -0.22125)

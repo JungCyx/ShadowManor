@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://cftv85u8muw60"]
+
+[ext_resource type="Script" uid="uid://bsko830pu1v7q" path="res://player.gd" id="1_rw01q"]
+[ext_resource type="Texture2D" uid="uid://d4hp4x5ex01wi" path="res://assets/2f1cf444ceaa43e70a120c874a1652e8.png" id="2_02hg7"]
+[ext_resource type="PackedScene" uid="uid://5hf7dqfeyphr" path="res://assets/rogue.tscn" id="2_ycys3"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3kcrb"]
+
+[node name="RigidBody3D" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+linear_damp = 3.0
+script = ExtResource("1_rw01q")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.5, 0, -7.54979e-08, 0, 0.5, 0, 7.54979e-08, 0, -0.5, 0, 0.5, 0)
+shape = SubResource("CapsuleShape3D_3kcrb")
+
+[node name="TwistPivot" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.75, 0)
+
+[node name="PitchPivot" type="Node3D" parent="TwistPivot"]
+
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 1.29378e-09, -7.33739e-09, 0, 0.984808, 0.173648, 7.45058e-09, -0.173648, 0.984808, 0.78653, 0.569891, 1.54331)
+
+[node name="TextureRect" type="TextureRect" parent="TwistPivot/PitchPivot/Camera3D"]
+offset_right = 115200.0
+offset_bottom = 64800.0
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("2_02hg7")
+expand_mode = 1
+stretch_mode = 3
+
+[node name="Rogue" parent="." instance=ExtResource("2_ycys3")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0, 0, 0)
