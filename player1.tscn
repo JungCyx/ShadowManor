@@ -26,7 +26,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.539722, 1.2, 3)
 
 [node name="seeCast" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, -0.221398, -1.10746, 0, 1.25549, -0.195295, -0.574145, -0.227013, -3.22805)
+transform = Transform3D(1, 0, 0, 0, -0.39058, -1.20237, 0, 2.21488, -0.212032, -0.574145, -0.227013, -3.22805)
 collide_with_areas = true
 
 [node name="Rogue" parent="." instance=ExtResource("1_c27rf")]
@@ -50,3 +50,8 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="CanvasLayer/BoxContainer"]
 layout_mode = 2
 text = "Press E to interact"
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51106, 0)
+light_color = Color(1, 0.94902, 0.8, 1)
+spot_angle = 28.886

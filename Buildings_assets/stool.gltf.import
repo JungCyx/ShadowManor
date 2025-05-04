@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6t3aq6qrama0"
-path="res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"
+uid="uid://b776ah5xxsba1"
+path="res://.godot/imported/stool.gltf-15580c441117c6c6203d5de0e2d59f9e.scn"
 
 [deps]
 
-source_file="res://Buildings_assets/shelves.gltf"
-dest_files=["res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"]
+source_file="res://Buildings_assets/stool.gltf"
+dest_files=["res://.godot/imported/stool.gltf-15580c441117c6c6203d5de0e2d59f9e.scn"]
 
 [params]
 

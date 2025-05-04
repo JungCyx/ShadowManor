@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dk7nmoykg3yhh"]
+[gd_scene load_steps=6 format=3 uid="uid://dk7nmoykg3yhh"]
 
 [ext_resource type="PackedScene" uid="uid://chtx21722ebht" path="res://Buildings_assets/chest/Gold chest.fbx" id="2_bp1or"]
 [ext_resource type="Script" uid="uid://ddvhouoksjqn2" path="res://area_3d_chest.gd" id="3_bp1or"]
@@ -34,6 +34,9 @@ func _process(delta):
 [sub_resource type="BoxShape3D" id="BoxShape3D_trlyu"]
 size = Vector3(2.5415, 2.16809, 1.89563)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_8uwsg"]
+size = Vector3(2.43401, 2.25494, 2.02283)
+
 [node name="Chest" type="Node3D"]
 script = SubResource("GDScript_8uwsg")
 
@@ -49,8 +52,15 @@ bones/3/position = Vector3(-8.37717e-05, 0.00499686, 0.00846173)
 script = ExtResource("3_bp1or")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00952148, 0.584045, 0.0142212)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.11102, 0.584045, 0.0142212)
 shape = SubResource("BoxShape3D_trlyu")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0220413, 0.72226, -0.0515747)
+shape = SubResource("BoxShape3D_8uwsg")
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]

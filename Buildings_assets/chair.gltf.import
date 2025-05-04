@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6t3aq6qrama0"
-path="res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"
+uid="uid://dbo50oepkaeb0"
+path="res://.godot/imported/chair.gltf-dc00038be44ff3074f84759fac3eb715.scn"
 
 [deps]
 
-source_file="res://Buildings_assets/shelves.gltf"
-dest_files=["res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"]
+source_file="res://Buildings_assets/chair.gltf"
+dest_files=["res://.godot/imported/chair.gltf-dc00038be44ff3074f84759fac3eb715.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=1.5
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true

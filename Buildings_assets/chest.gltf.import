@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6t3aq6qrama0"
-path="res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"
+uid="uid://cy7spxmvsr86p"
+path="res://.godot/imported/chest.gltf-efffb2ad7f56afc294eb139f15a87830.scn"
 
 [deps]
 
-source_file="res://Buildings_assets/shelves.gltf"
-dest_files=["res://.godot/imported/shelves.gltf-c9ba283ec9ac9d0e69362c809fbdf8c2.scn"]
+source_file="res://Buildings_assets/chest.gltf"
+dest_files=["res://.godot/imported/chest.gltf-efffb2ad7f56afc294eb139f15a87830.scn"]
 
 [params]
 
@@ -32,13 +32,6 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={
-"materials": {
-"texture": {
-"use_external/enabled": true,
-"use_external/path": "uid://ci0tcttbgvgjw"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bdl6su6iy1s83"]
+
+[ext_resource type="PackedScene" uid="uid://b776ah5xxsba1" path="res://Buildings_assets/stool.gltf" id="1_whlh4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5pqpp"]
+size = Vector3(0.759491, 0.503174, 0.807129)
+
+[node name="Stool" type="Node3D"]
+
+[node name="stool2" parent="." instance=ExtResource("1_whlh4")]
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00468445, 0.248413, -0.00170898)
+shape = SubResource("BoxShape3D_5pqpp")
