@@ -74,6 +74,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and stamina_bar.value >= 10:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
+		time_since_last_stamina_action = 0
 		stamina_bar.value -= 10
 	else:
 		jumping = false
@@ -82,6 +83,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("sprint") and stamina_bar.value > 0.05:
 		SPEED = 8.0
 		stamina_bar.value -= 0.05
+		time_since_last_stamina_action = 0
 	else:
 		SPEED = 5.0
 
