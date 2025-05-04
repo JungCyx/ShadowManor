@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://bbwhi7phlg0u6"]
 
-[ext_resource type="Script" uid="uid://bugdoxm3o8eda" path="res://main_menu.gd" id="1_emtq1"]
+[ext_resource type="Script" path="res://main_menu.gd" id="1_emtq1"]
 [ext_resource type="Texture2D" uid="uid://do8bm7bdx0r1" path="res://ShadowManor Background.png" id="2_m8npc"]
 [ext_resource type="AudioStream" uid="uid://mbpaay1gkk56" path="res://marimba_1.wav" id="3_fdlu2"]
 [ext_resource type="FontFile" uid="uid://3r7fuc40jlg5" path="res://minecraftia/Minecraftia-Regular.ttf" id="4_crl83"]

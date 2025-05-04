@@ -10,6 +10,7 @@ var pitch_input := 0
 var in_air := false
 var jumping := false
 var key_count = 0
+var time_since_last_stamina_action = 0
 # === Hit tracking ===
 var hit_count := 0
 const MAX_HITS := 5
@@ -19,6 +20,8 @@ var is_dead := false
 @onready var twist_pivot = $TwistPivot
 @onready var pitch_pivot = $TwistPivot/PitchPivot
 @onready var camera = $TwistPivot/PitchPivot/Camera3D
+@onready var stamina_bar = $CanvasLayer/StaminaBar
+@onready var health_bar = $CanvasLayer/HealthBar
 
 
 
@@ -33,6 +36,8 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	time_since_last_stamina_action += delta
+	
 	$CanvasLayer/BoxContainer/Label.hide()
 	if %seeCast.is_colliding():
 		var target = %seeCast.get_collider()
@@ -40,15 +45,14 @@ func _physics_process(delta: float) -> void:
 			$CanvasLayer/BoxContainer/Label.show()
 			if Input.is_action_just_pressed("interact"):
 				target.interact(self)
-			
-			
-			
 		
 		
 		
 	if is_dead:
 		return
 	
+	if time_since_last_stamina_action >= 5:
+		stamina_bar.value += 0.5
 	# Add the gravity
 	if not is_on_floor():
 		velocity += get_gravity() * delta
@@ -67,14 +71,19 @@ func _physics_process(delta: float) -> void:
 	pitch_input = 0.0
 	
 	# Handle jump
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and stamina_bar.value >= 10:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
+		stamina_bar.value -= 10
 	else:
 		jumping = false
 
 	# Sprint toggle
-	SPEED = 8.0 if Input.is_action_pressed("sprint") else 5.0
+	if Input.is_action_pressed("sprint") and stamina_bar.value > 0.05:
+		SPEED = 8.0
+		stamina_bar.value -= 0.05
+	else:
+		SPEED = 5.0
 
 	# Movement direction
 	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
@@ -101,11 +110,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
-
-	hit_count += 1
-	print("Player hit count:", hit_count)
-
-	if hit_count >= MAX_HITS:
+	
+	health_bar.value -= amount
+	if health_bar.value == 0:
 		die()
 
 func die():
