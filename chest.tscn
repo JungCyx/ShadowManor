@@ -25,9 +25,10 @@ func _on_body_exited(body):
 		player_in_range = false
 
 func _process(delta):
-	if player_in_range and Input.is_action_just_pressed(\"interact\") and not is_open:
-e		animation_player.play(\"open\")  # Change to your actual animation name
-		is_open = true
+	pass
+	#if player_in_range and Input.is_action_just_pressed(\"interact\") and not is_open:
+	#	animation_player.play(\"open\")  # Change to your actual animation name
+	#	is_open = true
 "
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_trlyu"]
@@ -39,7 +40,7 @@ script = SubResource("GDScript_8uwsg")
 [node name="Gold chest" parent="." instance=ExtResource("2_bp1or")]
 
 [node name="Skeleton3D" parent="Gold chest/Armature Gold chest" index="0"]
-bones/1/rotation = Quaternion(0.264097, 1.14977e-07, 3.14828e-08, 0.964496)
+bones/1/rotation = Quaternion(-0.125103, 1.18273e-07, -1.49135e-08, 0.992144)
 bones/2/position = Vector3(7.5202e-05, 0.00504807, 0.00843142)
 bones/2/rotation = Quaternion(0.548352, 0.570288, 0.429267, -0.435675)
 bones/3/position = Vector3(-8.37717e-05, 0.00499686, 0.00846173)
