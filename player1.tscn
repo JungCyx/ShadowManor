@@ -24,5 +24,29 @@ transform = Transform3D(1, 0, 0, 0, 0.959314, 0.282341, 0, -0.282341, 0.959314, 
 [node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.539722, 1.2, 3)
 
+[node name="seeCast" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, -0.221398, -1.10746, 0, 1.25549, -0.195295, -0.574145, -0.227013, -3.22805)
+collide_with_areas = true
+
 [node name="Rogue" parent="." instance=ExtResource("1_c27rf")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, -5.96046e-08, -1.49012e-08)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = -20.0
+offset_right = 70.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/BoxContainer"]
+layout_mode = 2
+text = "Press E to interact"

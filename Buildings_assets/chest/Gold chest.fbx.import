@@ -3,20 +3,20 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cett7c40vfriv"
-path="res://.godot/imported/chest_gold.gltf-aaf58891a8a8144dc7b4abc4548c7ac4.scn"
+uid="uid://chtx21722ebht"
+path="res://.godot/imported/Gold chest.fbx-4ac76a36dab324d89a77b800d5ce8f8c.scn"
 
 [deps]
 
-source_file="res://assets/chest/chest_gold.gltf"
-dest_files=["res://.godot/imported/chest_gold.gltf-aaf58891a8a8144dc7b4abc4548c7ac4.scn"]
+source_file="res://Buildings_assets/chest/Gold chest.fbx"
+dest_files=["res://.godot/imported/Gold chest.fbx-4ac76a36dab324d89a77b800d5ce8f8c.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
-nodes/root_scale=1.0
+nodes/root_scale=0.35
 nodes/import_as_skeleton_bones=false
 nodes/use_node_type_suffixes=true
 meshes/ensure_tangents=true
@@ -28,10 +28,18 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+_subresources={
+"materials": {
+"Gold chest": {
+"use_external/enabled": true,
+"use_external/path": "uid://sclfdhect8uc"
+}
+}
+}
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

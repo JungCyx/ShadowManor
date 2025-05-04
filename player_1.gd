@@ -9,7 +9,7 @@ var twist_input := 0
 var pitch_input := 0
 var in_air := false
 var jumping := false
-
+var key_count = 0
 # === Hit tracking ===
 var hit_count := 0
 const MAX_HITS := 5
@@ -20,10 +20,32 @@ var is_dead := false
 @onready var pitch_pivot = $TwistPivot/PitchPivot
 @onready var camera = $TwistPivot/PitchPivot/Camera3D
 
+
+
+#key stuff
+func add_key():
+	key_count += 1
+	print("keys: ", key_count)
+
+
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
+	
+	$CanvasLayer/BoxContainer/Label.hide()
+	if %seeCast.is_colliding():
+		var target = %seeCast.get_collider()
+		if target.has_method("interact"):
+			$CanvasLayer/BoxContainer/Label.show()
+			if Input.is_action_just_pressed("interact"):
+				target.interact()
+			
+			
+			
+		
+		
+		
 	if is_dead:
 		return
 	

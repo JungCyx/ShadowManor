@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk7nmoykg3yhh"]
+
+[ext_resource type="PackedScene" uid="uid://chtx21722ebht" path="res://Buildings_assets/chest/Gold chest.fbx" id="2_bp1or"]
+[ext_resource type="Script" uid="uid://ddvhouoksjqn2" path="res://area_3d_chest.gd" id="3_bp1or"]
+
+[sub_resource type="GDScript" id="GDScript_8uwsg"]
+script/source = "extends Node3D
+
+@onready var animation_player = $AnimationPlayer
+@onready var area = $Area3D
+
+var player_in_range = false
+var is_open = false
+
+func _ready():
+	area.body_entered.connect(_on_body_entered)
+	area.body_exited.connect(_on_body_exited)
+
+func _on_body_entered(body):
+	if body.name == \"Player\":  # or use group/tag
+		player_in_range = true
+
+func _on_body_exited(body):
+	if body.name == \"Player\":
+		player_in_range = false
+
+func _process(delta):
+	if player_in_range and Input.is_action_just_pressed(\"interact\") and not is_open:
+e		animation_player.play(\"open\")  # Change to your actual animation name
+		is_open = true
+"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_trlyu"]
+size = Vector3(2.5415, 2.16809, 1.89563)
+
+[node name="Chest" type="Node3D"]
+script = SubResource("GDScript_8uwsg")
+
+[node name="Gold chest" parent="." instance=ExtResource("2_bp1or")]
+
+[node name="Skeleton3D" parent="Gold chest/Armature Gold chest" index="0"]
+bones/1/rotation = Quaternion(0.264097, 1.14977e-07, 3.14828e-08, 0.964496)
+bones/2/position = Vector3(7.5202e-05, 0.00504807, 0.00843142)
+bones/2/rotation = Quaternion(0.548352, 0.570288, 0.429267, -0.435675)
+bones/3/position = Vector3(-8.37717e-05, 0.00499686, 0.00846173)
+
+[node name="Area3D" type="Area3D" parent="."]
+script = ExtResource("3_bp1or")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00952148, 0.584045, 0.0142212)
+shape = SubResource("BoxShape3D_trlyu")
+
+[connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
+
+[editable path="Gold chest"]
