@@ -13,7 +13,12 @@ func _process(delta: float) -> void:
 
 func _on_body_entered(body: Node3D) -> void:
 	if body.name == "Player":
-		get_tree().change_scene_to_file("res://Level2.tscn")
+		if "key_count" in body:
+			if body.key_count >= 4:
+				print("Transitioning...")
+				get_tree().change_scene_to_file("res://Level2.tscn")
+			else:
+				print("Need more keys:", body.key_count)
 
 
 func _on_body_exited(body: Node3D) -> void:

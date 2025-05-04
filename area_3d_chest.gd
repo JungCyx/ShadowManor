@@ -15,8 +15,15 @@ func _process(delta: float) -> void:
 	pass
 	
 
-func interact():
-	print("INTERACTED!")
+func interact(player: CharacterBody3D) -> void:
+	if is_open:
+		return
+	
+	is_open = true
+	print("chest opened")
+	
+	if player.has_method("add_key"):
+		player.add_key()
 
 
 func _on_body_entered(body: Node3D) -> void:

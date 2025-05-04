@@ -39,7 +39,7 @@ func _physics_process(delta: float) -> void:
 		if target.has_method("interact"):
 			$CanvasLayer/BoxContainer/Label.show()
 			if Input.is_action_just_pressed("interact"):
-				target.interact()
+				target.interact(self)
 			
 			
 			
