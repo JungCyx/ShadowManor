@@ -1,0 +1,88 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds8ajetu0wddb"]
+
+[ext_resource type="PackedScene" uid="uid://qw08i27wkyrj" path="res://assets/human_low_poly.glb" id="1_5t1pl"]
+[ext_resource type="Script" uid="uid://dckk0tc4kquwi" path="res://assets/human_low_poly.gd" id="2_35cvf"]
+
+[node name="human_low_poly" instance=ExtResource("1_5t1pl")]
+script = ExtResource("2_35cvf")
+
+[node name="Skeleton3D" parent="Armature" index="0"]
+bones/0/position = Vector3(0, -0.13166, 0)
+bones/0/rotation = Quaternion(0, -0.00698129, 0, 0.999976)
+bones/1/rotation = Quaternion(0.00417052, 0.156697, -0.000720312, 0.987638)
+bones/1/scale = Vector3(1, 1, 1)
+bones/2/rotation = Quaternion(0.107693, -0.00040341, -0.00151708, 0.994183)
+bones/2/scale = Vector3(1, 1, 1)
+bones/3/rotation = Quaternion(-0.0630135, 0.000264095, 0.000896574, 0.998012)
+bones/4/rotation = Quaternion(0.000186641, -0.135742, 0.0133669, 0.990654)
+bones/5/rotation = Quaternion(-0.125358, -0.105407, -0.812702, 0.559188)
+bones/5/scale = Vector3(1, 1, 1)
+bones/6/rotation = Quaternion(0.0771568, -0.148332, -0.460803, 0.871611)
+bones/6/scale = Vector3(1, 1, 1)
+bones/7/rotation = Quaternion(0.568295, 0.102939, -0.271869, 0.76976)
+bones/8/rotation = Quaternion(0.223527, -0.0789385, -0.359799, 0.902413)
+bones/9/rotation = Quaternion(-0.0757488, 0.0289962, 0.0720243, 0.994099)
+bones/10/rotation = Quaternion(-0.0697477, -0.0135472, 0.138745, 0.987776)
+bones/10/scale = Vector3(1, 1, 1)
+bones/11/rotation = Quaternion(0.0399301, 0.0416063, -0.329849, 0.942271)
+bones/11/scale = Vector3(1, 1, 1)
+bones/12/scale = Vector3(1, 1, 1)
+bones/13/rotation = Quaternion(-0.0774248, -0.00510125, 0.383935, 0.920094)
+bones/14/rotation = Quaternion(0.302617, 0.098078, 0.0894011, 0.943828)
+bones/15/rotation = Quaternion(0.223527, 0.0789385, 0.359799, 0.902413)
+bones/15/scale = Vector3(1, 1, 1)
+bones/16/rotation = Quaternion(-0.0757488, -0.0289962, -0.0720244, 0.994099)
+bones/17/rotation = Quaternion(-0.0697477, 0.0135472, -0.138745, 0.987776)
+bones/17/scale = Vector3(1, 1, 1)
+bones/18/scale = Vector3(1, 1, 1)
+bones/19/rotation = Quaternion(0.165879, 0.0740322, 0.980295, -0.0776161)
+bones/19/scale = Vector3(1.00007, 1, 1.00001)
+bones/20/rotation = Quaternion(-0.388543, 0.000521862, 0.0456692, 0.920298)
+bones/20/scale = Vector3(1, 1, 1)
+bones/21/rotation = Quaternion(0.817195, 0.13099, 0.0593347, 0.558135)
+bones/21/scale = Vector3(1, 1.00003, 0.999998)
+bones/22/rotation = Quaternion(0.01458, 0.252632, 0.966966, 0.0306673)
+bones/22/scale = Vector3(1.00007, 1, 1.00001)
+bones/23/rotation = Quaternion(-0.400405, -0.000519257, -0.0470636, 0.915129)
+bones/23/scale = Vector3(1, 1, 1)
+bones/24/rotation = Quaternion(0.688565, -0.0234933, -0.127611, 0.713471)
+bones/24/scale = Vector3(1.00002, 0.999994, 1.00001)
+bones/25/position = Vector3(0.240672, -0.438365, 0.174443)
+bones/25/rotation = Quaternion(-0.0350048, 0.70624, 0.70624, -0.0350048)
+bones/25/scale = Vector3(1, 1, 1)
+bones/26/position = Vector3(0.185399, -0.79762, -0.170257)
+bones/26/rotation = Quaternion(-0.0395345, 0.706001, -0.706001, 0.0395345)
+bones/26/scale = Vector3(1, 1, 1)
+bones/27/scale = Vector3(1, 1, 1)
+bones/28/position = Vector3(-0.185399, -0.79762, 0.12822)
+bones/28/rotation = Quaternion(-0.707107, 0, 0, 0.707107)
+
+[node name="body_lower_base" parent="Armature/Skeleton3D" index="0"]
+visible = false
+
+[node name="body_lower_iron" parent="Armature/Skeleton3D" index="2"]
+visible = false
+
+[node name="body_lower_leather" parent="Armature/Skeleton3D" index="3"]
+visible = false
+
+[node name="body_upper_base" parent="Armature/Skeleton3D" index="4"]
+visible = false
+
+[node name="body_upper_iron" parent="Armature/Skeleton3D" index="6"]
+visible = false
+
+[node name="body_upper_leather" parent="Armature/Skeleton3D" index="7"]
+visible = false
+
+[node name="cap_chainmail" parent="Armature/Skeleton3D" index="8"]
+visible = false
+
+[node name="cap_leather_hood" parent="Armature/Skeleton3D" index="9"]
+visible = false
+
+[node name="iron_sword" parent="Armature/Skeleton3D" index="13"]
+visible = false
+
+[node name="wooden_shield" parent="Armature/Skeleton3D" index="14"]
+visible = false

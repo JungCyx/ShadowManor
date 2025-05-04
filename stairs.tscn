@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhswkmm6crkpi"]
+
+[ext_resource type="PackedScene" uid="uid://cliafobsofc4l" path="res://Buildings_assets/stairs.gltf" id="1_6igwe"]
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="stairs2" parent="." instance=ExtResource("1_6igwe")]
