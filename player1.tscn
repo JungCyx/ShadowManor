@@ -24,10 +24,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.901444, 0)
 [node name="PitchPivot" type="Node3D" parent="TwistPivot"]
 transform = Transform3D(1, 0, 0, 0, 0.959314, 0.282341, 0, -0.282341, 0.959314, 0, 0, 0)
 
-[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.539722, 1.2, 3)
+[node name="SpringArm3D" type="SpringArm3D" parent="TwistPivot/PitchPivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54, 1.2, 0)
+spring_length = 3.0
 
-[node name="seeCast" type="RayCast3D" parent="TwistPivot/PitchPivot/Camera3D"]
+[node name="Camera3D" type="Camera3D" parent="TwistPivot/PitchPivot/SpringArm3D"]
+
+[node name="seeCast" type="RayCast3D" parent="TwistPivot/PitchPivot/SpringArm3D/Camera3D"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, -0.39058, -1.20237, 0, 2.21488, -0.212032, -0.574145, -0.227013, -3.22805)
 collide_with_areas = true
