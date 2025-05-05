@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://b3i48t2ho4i64"]
 
 [ext_resource type="PackedScene" uid="uid://5hf7dqfeyphr" path="res://assets/rogue.tscn" id="1_c27rf"]
-[ext_resource type="Script" path="res://player_1.gd" id="1_tuoay"]
+[ext_resource type="Script" uid="uid://brpnm6xe4ofbh" path="res://player_1.gd" id="1_tuoay"]
 [ext_resource type="Texture2D" uid="uid://dp6gjs7utsjnu" path="res://bloodpic.png" id="3_4ui4q"]
 [ext_resource type="Texture2D" uid="uid://2542u6snu6sy" path="res://unlocking.png" id="4_3y5d6"]
 [ext_resource type="AudioStream" uid="uid://b13h331csdp6b" path="res://minecraft-alpha-damage-sound-effect_MZWT8DO.mp3" id="5_rm5qr"]
