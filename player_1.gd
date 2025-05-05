@@ -22,17 +22,19 @@ var is_dead := false
 @onready var camera = $TwistPivot/PitchPivot/Camera3D
 @onready var stamina_bar = $CanvasLayer/StaminaBar
 @onready var health_bar = $CanvasLayer/HealthBar
-
+@onready var key_label = $CanvasLayer/KeyLabel
 
 
 #key stuff
 func add_key():
 	key_count += 1
 	print("keys: ", key_count)
+	key_label.text = "Keys: %d" % key_count
 
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	$CanvasLayer/BloodSplatter.visible = false
 
 func _physics_process(delta: float) -> void:
 	
@@ -74,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor() and stamina_bar.value >= 10:
 		velocity.y = JUMP_VELOCITY
 		jumping = true
+		time_since_last_stamina_action = 0
 		stamina_bar.value -= 10
 	else:
 		jumping = false
@@ -82,6 +85,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("sprint") and stamina_bar.value > 0.05:
 		SPEED = 8.0
 		stamina_bar.value -= 0.05
+		time_since_last_stamina_action = 0
 	else:
 		SPEED = 5.0
 
@@ -107,11 +111,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		pitch_input = -event.relative.y * mouse_sensitivity
 
 # === Called by zombie.gd ===
+# === Called by zombie.gd ===
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
 	
 	health_bar.value -= amount
+	# Show blood splatter when health is below a certain threshold (e.g., 10%)
+	if health_bar.value <= health_bar.max_value * 0.1:
+		$CanvasLayer/BloodSplatter.visible = true 
+		$CanvasLayer/BloodSplatter.texture = preload("res://bloodpic.png")  
 	if health_bar.value == 0:
 		die()
 

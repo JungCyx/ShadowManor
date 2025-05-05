@@ -1,6 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://dt5125abfv0xp"]
+[gd_scene load_steps=33 format=3 uid="uid://dt5125abfv0xp"]
 
-[ext_resource type="Script" uid="uid://dae7p7kfvi7ny" path="res://level.gd" id="1_cpf81"]
+[ext_resource type="Script" path="res://level.gd" id="1_cpf81"]
 [ext_resource type="Texture2D" uid="uid://cwgv5arupupcj" path="res://Textures/Tile_04-256x256.png" id="2_sypgb"]
 [ext_resource type="PackedScene" uid="uid://bmn6ogia7uyr5" path="res://table_small.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://dvasnoq3xq2kp" path="res://wall.tscn" id="3_3ywx5"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://igrc84teqrtw" path="res://Zombie.tscn" id="11_ofirr"]
 [ext_resource type="PackedScene" uid="uid://b3i48t2ho4i64" path="res://player1.tscn" id="11_wldrt"]
 [ext_resource type="FontFile" uid="uid://3r7fuc40jlg5" path="res://minecraftia/Minecraftia-Regular.ttf" id="12_7hvhr"]
-[ext_resource type="Script" uid="uid://cv5mrx43lfgi5" path="res://area_3d.gd" id="12_d6u53"]
+[ext_resource type="Script" path="res://area_3d.gd" id="12_d6u53"]
 [ext_resource type="PackedScene" uid="uid://3b4je0je6try" path="res://Buildings_assets/Ceiling/ceiling_tile.gltf" id="12_sypgb"]
 [ext_resource type="PackedScene" uid="uid://yoc1slvdl5x1" path="res://Buildings_assets/Bed/bed_decorated.gltf" id="13_sypgb"]
 [ext_resource type="PackedScene" uid="uid://dbo50oepkaeb0" path="res://Buildings_assets/chair.gltf" id="14_esphl"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://6t3aq6qrama0" path="res://Buildings_assets/shelves.gltf" id="17_yye10"]
 [ext_resource type="PackedScene" uid="uid://d370d4gqi66ud" path="res://bed_decorated.tscn" id="18_pd0bf"]
 [ext_resource type="PackedScene" uid="uid://3vbb0tghp6ar" path="res://Buildings_assets/table_long_tablecloth_decorated_A.gltf" id="19_viiqw"]
+[ext_resource type="AudioStream" uid="uid://b3vxdbrw7yhoj" path="res://horror-game-menu-25388.mp3" id="21_xdlqv"]
 
 [sub_resource type="Environment" id="Environment_8ka31"]
 ambient_light_source = 2
@@ -77,10 +78,14 @@ environment = SubResource("Environment_8ka31")
 [node name="DeathLabel" type="CanvasLayer" parent="."]
 
 [node name="DLabel" type="Label" parent="DeathLabel"]
-offset_left = 32.0
-offset_top = 8.0
-offset_right = 72.0
-offset_bottom = 31.0
+z_index = 10
+z_as_relative = false
+offset_left = 475.0
+offset_top = 299.0
+offset_right = 515.0
+offset_bottom = 322.0
+theme_override_fonts/font = ExtResource("12_7hvhr")
+theme_override_font_sizes/font_size = 24
 
 [node name="Player" parent="." instance=ExtResource("11_wldrt")]
 
@@ -108,6 +113,7 @@ text = "ExitGame"
 [node name="Health" type="CanvasLayer" parent="."]
 
 [node name="Healthbar" type="ProgressBar" parent="Health"]
+visible = false
 offset_left = 37.0
 offset_top = 13.0
 offset_right = 41.0
@@ -1724,6 +1730,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 133.879, 4.4418, 25.0147)
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 3.17185, 0, 0, 0, 2.42299, 21.1781, 1.89607, -9.37526)
 mesh = SubResource("BoxMesh_pd0bf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_xdlqv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="Area3D" to="Area3D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area3D" to="Area3D" method="_on_body_exited"]
