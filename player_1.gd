@@ -115,6 +115,9 @@ func _unhandled_input(event: InputEvent) -> void:
 func take_damage(amount: int) -> void:
 	if is_dead:
 		return
+	if $HurtSound and not $HurtSound.playing:
+		$HurtSound.play()
+
 	
 	health_bar.value -= amount
 	# Show blood splatter when health is below a certain threshold (e.g., 10%)

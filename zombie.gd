@@ -111,7 +111,8 @@ func _perform_attack():
 		player.take_damage(34)
 		time_since_last_attack = 0.0
 		print(" Attack hit!")
-
+	if $AttackSound and not $AttackSound.playing:
+			$AttackSound.play()
 # === Raycast vision check
 func _player_is_visible() -> bool:
 	ray_cast.target_position = ray_cast.to_local(player.global_position)
