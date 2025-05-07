@@ -1,6 +1,6 @@
 [gd_scene load_steps=38 format=3 uid="uid://dt5125abfv0xp"]
 
-[ext_resource type="Script" uid="uid://dae7p7kfvi7ny" path="res://level.gd" id="1_cpf81"]
+[ext_resource type="Script" path="res://level.gd" id="1_cpf81"]
 [ext_resource type="Texture2D" uid="uid://cwgv5arupupcj" path="res://Textures/Tile_04-256x256.png" id="2_sypgb"]
 [ext_resource type="PackedScene" uid="uid://bmn6ogia7uyr5" path="res://table_small.tscn" id="3_2nifc"]
 [ext_resource type="PackedScene" uid="uid://dvasnoq3xq2kp" path="res://wall.tscn" id="3_3ywx5"]
@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://igrc84teqrtw" path="res://Zombie.tscn" id="11_ofirr"]
 [ext_resource type="PackedScene" uid="uid://b3i48t2ho4i64" path="res://player1.tscn" id="11_wldrt"]
 [ext_resource type="FontFile" uid="uid://3r7fuc40jlg5" path="res://minecraftia/Minecraftia-Regular.ttf" id="12_7hvhr"]
-[ext_resource type="Script" uid="uid://cv5mrx43lfgi5" path="res://area_3d.gd" id="12_d6u53"]
+[ext_resource type="Script" path="res://area_3d.gd" id="12_d6u53"]
 [ext_resource type="PackedScene" uid="uid://3b4je0je6try" path="res://Buildings_assets/Ceiling/ceiling_tile.gltf" id="12_sypgb"]
 [ext_resource type="PackedScene" uid="uid://yoc1slvdl5x1" path="res://Buildings_assets/Bed/bed_decorated.gltf" id="13_sypgb"]
 [ext_resource type="PackedScene" uid="uid://dbo50oepkaeb0" path="res://Buildings_assets/chair.gltf" id="14_esphl"]

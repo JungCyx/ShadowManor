@@ -1,7 +1,7 @@
 [gd_scene load_steps=24 format=3 uid="uid://cxygv3c6m3xp0"]
 
 [ext_resource type="PackedScene" uid="uid://b3i48t2ho4i64" path="res://player1.tscn" id="1_nc7oo"]
-[ext_resource type="Script" uid="uid://bb6jl0ykgkg2v" path="res://level_2.gd" id="1_q0xi3"]
+[ext_resource type="Script" path="res://level_2.gd" id="1_q0xi3"]
 [ext_resource type="PackedScene" uid="uid://b6148ivv4u148" path="res://wall_corner.tscn" id="2_6x3wt"]
 [ext_resource type="PackedScene" uid="uid://dvasnoq3xq2kp" path="res://wall.tscn" id="3_3453u"]
 [ext_resource type="PackedScene" uid="uid://dhswkmm6crkpi" path="res://stairs.tscn" id="7_00xh1"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c3lucc5hurmlo" path="res://Buildings_assets/torch_lit.gltf" id="12_fx3gb"]
 [ext_resource type="PackedScene" uid="uid://yoc1slvdl5x1" path="res://Buildings_assets/Bed/bed_decorated.gltf" id="13_mgfd6"]
 [ext_resource type="PackedScene" uid="uid://igrc84teqrtw" path="res://Zombie.tscn" id="15_8tfmj"]
-[ext_resource type="Script" uid="uid://tp0t6c3n7dut" path="res://finish.gd" id="15_jw1dd"]
+[ext_resource type="Script" path="res://finish.gd" id="15_jw1dd"]
 [ext_resource type="PackedScene" uid="uid://3b4je0je6try" path="res://Buildings_assets/Ceiling/ceiling_tile.gltf" id="16_36n3i"]
 [ext_resource type="AudioStream" uid="uid://b3vxdbrw7yhoj" path="res://horror-game-menu-25388.mp3" id="16_sv531"]
 
@@ -2788,5 +2788,15 @@ script = ExtResource("15_jw1dd")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Finish"]
 transform = Transform3D(12.4181, 0, 0, 0, 1, 0, 0, 0, 5.32457, 18.7414, 1.82416, -6.97078)
 shape = SubResource("BoxShape3D_q0xi3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GameEnd" type="Label" parent="CanvasLayer"]
+offset_left = 416.0
+offset_top = 306.0
+offset_right = 614.0
+offset_bottom = 347.0
+theme_override_fonts/font = ExtResource("9_6x3wt")
+theme_override_font_sizes/font_size = 24
 
 [connection signal="body_entered" from="Finish" to="Finish" method="_on_body_entered"]
