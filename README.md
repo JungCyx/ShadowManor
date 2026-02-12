@@ -137,7 +137,7 @@ Return to Main Menu
 - **Font**:
   - Minecraftia font for UI
 
-## 🐛 Known Issues / Future Improvements
+##  Known Issues / Future Improvements
 
 ### Potential Enhancements
 - [ ] Additional zombie variations and attack types
