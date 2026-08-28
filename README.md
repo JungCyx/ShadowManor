@@ -65,9 +65,7 @@ A thrilling 3D survival horror game built with **Godot Engine 4.3**.
 
 
 
-##  Technical Details
-
-### Technology Stack
+### Tech Stack
 - **Engine**: Godot Engine 4.3
 - **Physics**: 3D RigidBody and CharacterBody systems
 - **AI**: NavigationAgent3D for pathfinding
@@ -137,17 +135,7 @@ Return to Main Menu
 - **Font**:
   - Minecraftia font for UI
 
-##  Known Issues / Future Improvements
 
-### Potential Enhancements
-- [ ] Additional zombie variations and attack types
-- [ ] Weapon system for player combat
-- [ ] Collectible items and inventory system
-- [ ] More detailed level environments
-- [ ] Difficulty settings (Easy, Normal, Hard)
-- [ ] Leaderboard system
-- [ ] Multiplayer co-op mode
-- [ ] Enhanced graphics options and accessibility settings
 
 
 
